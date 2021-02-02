@@ -22,6 +22,7 @@ $(function () {
   });
 });
 
+
 $(function () {
   $("#back-button a").on('click', function(event) {
     $("body, html").animate({
@@ -30,3 +31,17 @@ $(function () {
     event.preventDefault();
   });
 });
+
+// var offset = $("#portfolio").offset() || {top: 0, left: 0};
+
+
+$(function () {
+  $("header a").on('click', function (event) {
+    var offset = $($(this).attr("href")).offset() || {top: 0, left: 0};
+    $("body, html").animate({
+      scrollTop: offset.top
+    }, 500);
+    event.preventDefault();
+
+  })
+})
