@@ -21,3 +21,12 @@ $(function () {
     hidePrevious : false
   });
 });
+
+$(function () {
+  $("#back-button a").on('click', function(event) {
+    $("body, html").animate({
+      scrollTop: 0
+    }, 500);
+    event.preventDefault();
+  });
+});

@@ -306,6 +306,15 @@ footer {
 	line-height: 60px;
 }
 
+#back-button {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+}
+#back-button img {
+	width: 50px;
+}
+
 @media screen and (max-width:767px){
 	header {
 		height: 50px;
