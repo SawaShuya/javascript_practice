@@ -41,6 +41,9 @@ header {
 	background-color: #EC715F;
 	height: 70px;
 	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 9999;
 }
 .header_box {
 	margin: 0 auto;
@@ -49,6 +52,10 @@ header {
 .header_logo {
 	height: 70px;
 	float: left;
+}
+
+.humberger {
+	display: none;
 }
 
 nav {
@@ -73,6 +80,7 @@ nav {
 	background-position: center; */
 	width: 100%;
 	height: 650px;
+	margin-top: 70px;
 	/* padding-top: 200px; */
 }
 
@@ -328,28 +336,86 @@ footer {
 	.header_menu {
 		width: 40px;
 		height: 40px;
-		margin: 5px 0;
+		/* margin: 5px 0; */
 		border: 1px solid #FFFFFF;
 		background-color: #EC715F;
-		float: right;
+		position: absolute;
+		right: 15px;
+		top: 5px;
+		z-index: 10;
+		transition: all .4s;
 	}
-	.menuline {
-		display: block;
-		width: 25px;
-		height: 2px;
-		margin: 5px auto;
+	.header_menu.open {
+		background-color: #000;
+	}
+
+  .menuline {
+		position: absolute;
+		width: 24px;
+		height: 3px;
+		border-radius: 3px;
 		background-color: #FFFFFF;
+		transition: all .4s;
+		left: 7px;
 	}
-	.menuline:first-child {
-		margin-top: 10px;
+	.menuline:nth-child(1) {
+		top: 7px;
 	}
+	.menuline:nth-child(2) {
+		top: 17px;
+	}
+	.menuline:nth-child(3) {
+		top: 27px;
+	}
+
+
+	.menu-trigger.active .menuline:nth-child(1) {
+		-webkit-transform: translateY(10px) rotate(-45deg);
+		transform: translateY(10px) rotate(-45deg);
+	}
+	.menu-trigger.active .menuline:nth-child(2) {
+		opacity: 0;
+	}
+	.menu-trigger.active .menuline:nth-child(3) {
+		-webkit-transform: translateY(-10px) rotate(45deg);
+		transform: translateY(-10px) rotate(45deg);
+	}
+
 
 	nav {
 		display: none;
 	}
+	.humberger {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: #000;
+		color: #fff;
+		width: 100%;
+		min-height: 100%;
+		z-index: 9;
+	}
+
+	.nav_list {
+		float: none;
+		margin-bottom: 30px;
+	}
+	.nav_list_item {
+		text-align: center;
+		display: block;
+		width: 100%;
+		float: none;
+	}
 
 	#main_visual {
 		background-image: url(../img/code.png);
+		background-size: cover;
+		background-position: center;
+		margin-top: 50px;
+	}
+
+	.main-images {
+		display: none;
 	}
 	.main_v_title {
 		width: 90%;
